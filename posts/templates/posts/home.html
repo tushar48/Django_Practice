@@ -1,0 +1,53 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home Page</title>
+</head>
+<body> -->
+    {% extends 'base.html' %}
+    <!-- {% load static %}
+    {% block css %}
+<link rel="stylesheet" href="{% static 'posts/home.css' %}">
+    {% endblock css %} -->
+   {% block body %}
+ <h1> {{username|capfirst|truncatechars:5}}</h1>
+    {% for post in posts %}
+    <!-- <a href="{% url 'post' post.id%}"> -->
+         <!-- {{forloop.counter0}}  Display the index of the current item in the loop if we remove the 0 the index starts from 1 -->
+          <!-- {{forloop.first}} Display whether the current item is the first item in the loop -->
+       <a href="{% url 'post' post.id %}"> <h1>{{ forloop.counter }} - {{ post.title|capfirst }}</h1></a>
+    <!-- </a> -->
+    <!-- truncatewords:5 limits the content to 5 words -->
+     <!-- truncatechars:5 limits the title to 5 characters -->
+     <!-- <p>{{ post.content|truncatewords:5 }}</p> -->
+    <p>{{ post.content }}</p>
+     {% empty %}  <!-- This block is executed if the loop has no items -->
+    <h1>No Posts Available</h1>
+    
+    {% endfor %}
+    {% endblock body %}
+    
+    <!-- <h1>Welcome - {{ posts }}</h1> -->
+    <!-- {% if not posts %}
+    {% if posts|length == 0 %}
+    <h1>Post length is 0</h1>
+    <h1> No Posts Available</h1>
+    {% endif %}
+    {% endif %}
+    {% for post in posts %}
+    <a href="/post/{{post.id}}">
+        <h1>{{ post.title }}</h1>
+    </a>
+    <p>{{ post.content }}</p>
+    {% endfor %} -->
+    
+    <!-- <h1>Welcome - {{ username|capfirst }}</h1>  #|capfirst makes capital first letter--> 
+   
+<!-- <footer>This is footer</footer>
+
+</body>
+
+</html> -->

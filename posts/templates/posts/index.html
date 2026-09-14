@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+
+{% block body %}
+<h1>{{username}}</h1>
+<h1 class="my-3">Latest</h1>
+<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        {% for post in posts %}
+        {% include 'posts/includes/postcard.html' %}
+        <!-- This include renders a single post card -->
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock body %}
