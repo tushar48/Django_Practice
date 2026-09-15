@@ -22,8 +22,4 @@ urlpatterns = [
     path('post/',include('posts.urls')),
     path('google/',views.google),
     path('<int:id>/',views.google),
-    # path('globals/',views.globals,name='globals')
-    # path('post/helloworld/',views.hellowWorld)
-    # <id>/
-    #post/13 by using include it will take 13 part and went to the  posts.url file
 ]

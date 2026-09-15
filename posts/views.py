@@ -68,13 +68,4 @@ def post(request,id):
 
 
 
-def google(request,id):
 
-       url = reverse('post',args=[id]) # reverse function will take the name of the url and return the url path with the given arguments it will see the urls.py file and find the url with the name 'post' and return the url path with the given arguments
-       
-       return HttpResponseRedirect(url)
-   
-   
-   
-# def globals(request):
-#     return render(request,'global.html')
